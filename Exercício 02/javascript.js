@@ -20,3 +20,36 @@ function calcularVelocidade(){
     }
 }
 
+function calculoDeDano(){
+
+    const personagem = prompt("Digite o nome do personagem: ");
+    const poderDeAtaque = parseInt(prompt("Digite o poder de ataque do personagem: "))
+    
+    const defensor = prompt("Digite o nome do defensor: ");
+    const defensorVida = parseInt(prompt("Digite os pontos de vida do defensor: "));
+    const defensorPoderDefesa = parseInt(prompt("Digite o poder de defesa do defensor: "));
+    const defensorEscudo = prompt("Defensor possui escudo? SIM ou NÃO");
+
+    if(poderDeAtaque > defensorPoderDefesa & defensorEscudo !== "sim"){
+        danoCausado = poderDeAtaque - defensorPoderDefesa;
+        vida = defensorVida - danoCausado;
+    }
+
+    else if(poderDeAtaque > defensorPoderDefesa & defensorEscudo === "sim"){
+        danoCausado = (poderDeAtaque - defensorPoderDefesa )/2;
+        vida = defensorVida - danoCausado ;
+    }
+
+    else if(poderDeAtaque <= defensorPoderDefesa){
+        danoCausado = 0;
+    }
+
+    else{
+        alert("ERRO");
+    }
+
+    alert(`${personagem} causou ${danoCausado} de dano em ${defensor}`);
+
+    alert(`${personagem} \n Poder de ataque: ${poderDeAtaque} \n \n ${defensor} \n Pontos de vida: ${vida} \n Poder de defesa: ${defensorPoderDefesa} \n Possui escudo: ${defensorEscudo}`);
+}
+calculoDeDano()
