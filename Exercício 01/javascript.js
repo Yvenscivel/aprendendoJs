@@ -1,5 +1,5 @@
 
-function cadastroDePessoa(){
+function cadastroDePessoa   (){
     
     const nome = prompt("Digite seu primeiro nome: ");
     const sobreNome = prompt("Digite seu sobrenome: ");
