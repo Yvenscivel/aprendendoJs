@@ -1,27 +1,46 @@
-const opcao = parseInt(prompt(
-    "Escolha uma opção: \n" +
-    "1- Novo paciente \n" +
-    "2- Consultar paciente \n" +
-    "3- Sair"
-));
 
 let listaPacientes = [];
-
+let opcao
 do{
+    opcao = parseInt(prompt(
+        "Escolha uma opção: \n" +
+        "1- Cadastrar paciente \n" +
+        "2- Listar pacientes na fila de espera \n" +
+        "3- Consultar paciente \n" +
+        "4- Sair"
+    ));
+    
     switch(opcao){
         case 1:
-            cadastrarPaciente = prompt("Digite o nome do paciente: ");
+            let cadastrarPaciente = prompt("Digite o nome do paciente:");
             listaPacientes.push(cadastrarPaciente);
             alert("Paciente " + cadastrarPaciente + " cadatrado com um sucesso");
-            alert(listaPacientes)
-            break
+            break;
 
         case 2:
-            listaPacientes.shift()
-            break
+            if (listaPacientes.length === 0){
+                alert("Nenhum paciente cadastrado")
+            }
+            else{
+                alert("Pacientes cadastrados: \n" +listaPacientes)
+            }
+            break;
+
         case 3:
-            alert("Encerrando...")
-            break
+            let pacienteConsultado = listaPacientes.shift();
+            alert("Paciente consultado: " + pacienteConsultado)
+            
+            break;
+
+        case 4:
+            alert("Encerrando...");
+            break;
+
+        default:
+            alert("Digite uma opção válida do menu.");
     }
-}while(opcao !== 3);
+} while(opcao !== 4);
+
+
+
 
