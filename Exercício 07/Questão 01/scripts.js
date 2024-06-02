@@ -27,9 +27,13 @@ do{
             break;
 
         case 3:
-            let pacienteConsultado = listaPacientes.shift();
-            alert("Paciente consultado: " + pacienteConsultado)
-            
+            if(listaPacientes.length === 0){
+                alert("Não possui pacientes");
+            }
+            else{
+                let pacienteConsultado = listaPacientes.shift(); 
+                alert("Paciente consultado: " + pacienteConsultado)
+            }
             break;
 
         case 4:
